@@ -81,7 +81,7 @@ Batería de pruebas enfocada en el *Customer Journey* (el viaje de compra del us
 
 ## 💡 🧠 Apreciación y Reflexión Personal
 
-> 🌸 **Reflexión como alumna:**
+> 🌸 **REFLEXIÓN:**
 >
 > En esta actividad he aprendido varias cosas que no conocía antes, sobre todo el tema de cómo localizar elementos por id, que al principio no tenía muy claro y me confundía bastante. También he entendido mejor cómo funciona el driver de Selenium, cómo se inicializa y para qué sirve realmente dentro de los tests. Al principio me costó un poco porque había errores que no sabía de dónde venían, pero poco a poco fui entendiendo cómo interactuar con la página y cómo hacer que las pruebas funcionaran correctamente. En general, me ha servido para tener una primera toma de contacto más real con la automatización de pruebas y para entender mejor cómo se trabaja con este tipo de herramientas en los trabajos reales
 
