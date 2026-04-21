@@ -1,103 +1,103 @@
-<div style="background-color: #FFF0F5; border: 2px solid #FFC0CB; border-radius: 15px; padding: 25px; font-family: 'Helvetica', sans-serif;">
-
-<h1 align="center" style="color: #FF69B4;">🌸 Automatización de Pruebas con Selenium y JUnit 5 - SauceDemo 🌸</h1>
+<h1 align="center">🌸🎀 Automatización de Pruebas con Selenium y JUnit 5 - SauceDemo 🎀🌸</h1>
 
 <p align="center">
-  <strong style="color: #DB7093;">Autora:</strong> Marta González González<br>
-  <strong style="color: #DB7093;">Proyecto:</strong> Tarea de Evaluación - Módulo 16.2
+  <strong>🌷 Autora:</strong> Marta González González<br>
+  <strong>🌷 Proyecto:</strong> Tarea de Evaluación - Módulo 16.2
 </p>
 
-<hr style="border: 1px dashed #FFC0CB;">
+<br>
 
-<h2 style="color: #FF69B4;">📝 Descripción del Proyecto 📝</h2>
+## 💖 📝 Descripción del Proyecto
 
-<p style="color: #4B0082;">Este proyecto consiste en la automatización de un conjunto de pruebas funcionales para la aplicación web de demostración <a href="https://www.saucedemo.com/" style="color: #DA70D6;">SauceDemo</a>. El objetivo principal es simular y validar el comportamiento de un usuario real al iniciar sesión y gestionar el carrito de compras, asegurando que la interfaz responde correctamente a diversas interacciones.</p>
+Este proyecto consiste en la automatización exhaustiva de un conjunto de pruebas funcionales para la aplicación web de demostración **[SauceDemo](https://www.saucedemo.com/)**. El objetivo principal de esta tarea es simular y validar el comportamiento de un usuario real al interactuar con la plataforma: desde el inicio de sesión con diferentes credenciales, hasta la navegación por el catálogo y la gestión dinámica del carrito de compras.
 
-<p style="color: #4B0082;">Para el desarrollo de esta tarea se ha implementado el patrón de diseño <strong>Page Object Model (POM)</strong>, garantizando así un código mantenible, modular y escalable, separando la lógica de las pruebas de la definición de la interfaz de usuario.</p>
+Para el desarrollo arquitectónico de esta tarea, he implementado estrictamente el patrón de diseño **Page Object Model (POM)**. Este patrón garantiza un código altamente mantenible, modular y escalable, ya que separa por completo la lógica de las pruebas (las aserciones y los pasos) de la definición física de la interfaz de usuario (los localizadores web). Si la página web cambia en el futuro, solo tendré que actualizar las clases "Page", manteniendo los "Tests" intactos. ✨
 
-<hr style="border: 1px dashed #FFC0CB;">
+---
 
-<h2 style="color: #FF69B4;">🏗️ Estructura del Código y Archivos 🏗️</h2>
+## 🛍️ 🏗️ Estructura del Código y Arquitectura
 
-<p style="color: #4B0082;">El código está dividido lógicamente en dos paquetes principales: las páginas (que modelan la interfaz web) y los tests (que ejecutan las acciones y comprobaciones).</p>
+El código fuente está dividido lógicamente en dos paquetes principales que se comunican entre sí: el paquete de páginas (`pages`) y el paquete de pruebas (`tests`).
 
-<div style="background-color: #FFFFFF; border: 1px solid #FFDAE9; border-radius: 10px; padding: 15px; margin-top: 15px;">
-<h3 style="color: #DA70D6;">Clases de Interfaz (Pages) 💻</h3>
+### 💻 Clases de Interfaz (Pages)
 
-<ul>
-    <li>
-        <p><strong><code>LoginPage.java</code></strong></p>
-        <p style="color: #4B0082;">Esta clase representa la pantalla inicial de inicio de sesión. Contiene los localizadores (<code>By.id</code>, <code>By.cssSelector</code>) necesarios para identificar el campo de usuario, el de contraseña, el botón de acceso y el mensaje de error. Proporciona métodos de bajo nivel para interactuar con estos elementos (<code>escribirUsuario</code>, <code>escribirPassword</code>, <code>pulsarBotonAcceso</code>) y un método de servicio de alto nivel (<code>realizarLoginCompleto</code>) que encapsula el flujo completo, optimizando la escritura de los tests.</p>
-    </li>
-    <li>
-        <p><strong><code>InventoryPage.java</code></strong></p>
-        <p style="color: #4B0082;">Representa el catálogo de productos al que se accede tras un login exitoso. Define los localizadores para interactuar con productos específicos, sus botones de "Add to cart" y "Remove", y el indicador del carrito. Incluye métodos para realizar acciones como añadir productos (<code>anadirMochilaAlCarrito</code>) y obtener datos de la UI, como el número de productos en el carrito (<code>obtenerNumeroProductosCarrito</code>) o verificar cambios de estado en los botones (<code>botonRemoveApareceEnPantalla</code>).</p>
-    </li>
-</ul>
-</div>
+> Estas clases actúan como el "mapa" o "diccionario" de la página web. Selenium las utiliza para saber exactamente dónde y cómo hacer clic o escribir.
 
-<div style="background-color: #FFFFFF; border: 1px solid #FFDAE9; border-radius: 10px; padding: 15px; margin-top: 15px;">
-<h3 style="color: #DA70D6;">Clases de Prueba (Tests) 🧪</h3>
-<ul>
-    <li>
-        <p><strong><code>LoginTest.java</code></strong></p>
-        <p style="color: #4B0082;">Clase encargada de validar el flujo de autenticación. Utiliza las anotaciones <code>@BeforeEach</code> para la configuración del entorno (instanciar WebDriver, navegar a la URL) y <code>@AfterEach</code> para el desmontaje (cerrar el navegador), asegurando la atomicidad de cada prueba. Contiene dos casos de prueba:</p>
-        <ul>
-            <li style="color: #4B0082;"><code>loginCorrecto</code>: Valida un acceso exitoso con credenciales válidas, comprobando mediante una aserción que la URL final contiene la subcadena "inventory".</li>
-            <li style="color: #4B0082;"><code>loginIncorrecto</code>: Verifica el comportamiento del sistema ante credenciales erróneas, asegurando que se muestre el mensaje de error esperado.</li>
-        </ul>
-    </li>
-    <li>
-        <p><strong><code>InventoryTest.java</code></strong></p>
-        <p style="color: #4B0082;">Contiene la batería de pruebas enfocadas en la interacción con el inventario y el carrito de compras. Cada test comienza con un inicio de sesión correcto para establecer el estado necesario.</p>
-        <ul>
-            <li style="color: #4B0082;"><code>anadirUnProductoAlCarrito</code>: Comprueba que el contador del carrito se actualiza a 1 tras añadir un ítem.</li>
-            <li style="color: #4B0082;"><code>anadirDosProductosAlCarrito</code>: Verifica que el contador muestra 2 al agregar un segundo producto.</li>
-            <li style="color: #4B0082;"><code>botonCambiaTrasAnadirProducto</code>: Valida que el estado del botón cambia de "Add to cart" a "Remove" después de la acción, usando <code>assertTrue</code> sobre un método que comprueba la visibilidad del nuevo botón.</li>
-            <li style="color: #4B0082;"><code>pruebaAdicional_verificarProductoDentroDelCarrito</code>: Prueba de ampliación que navega hasta la página del carrito y afirma con <code>assertEquals</code> que el producto mostrado coincide con el que fue añadido.</li>
-        </ul>
-    </li>
-</ul>
-</div>
+🎀 **`LoginPage.java`**
+Esta clase representa la pantalla inicial de inicio de sesión de SauceDemo.
+*   **Localizadores:** He priorizado el uso de `By.id` por ser la estrategia más rápida, estable y segura en Selenium para encontrar el usuario y contraseña. Para el mensaje de error, como carece de ID estático, he empleado `By.cssSelector("[data-test='error']")` para asegurar una localización precisa.
+*   **Métodos:** Proporciona métodos de bajo nivel para interactuar atómicamente con los elementos (`escribirUsuario()`, `pulsarBotonAcceso()`) y, lo más importante, un método consolidado de alto nivel (`realizarLoginCompleto()`) que encapsula el flujo de entrada de una sola vez, optimizando enormemente la limpieza visual de las clases de test.
 
-<hr style="border: 1px dashed #FFC0CB;">
+🎀 **`InventoryPage.java`**
+Representa el catálogo de productos (inventory) al que se accede tras un login exitoso.
+*   **Localizadores:** Mapea botones dinámicos. Por ejemplo, define tanto el botón de "Add to cart" de la mochila como su estado posterior de "Remove", permitiendo validar cambios visuales. También mapea el globo contador del carrito usando `By.className`.
+*   **Métodos Lógicos:** Incluye métodos avanzados como `obtenerNumeroProductosCarrito()`, el cual no solo lee el DOM (HTML), sino que captura el texto (`String`) y lo transforma internamente a un número entero (`Integer.parseInt()`). Esto permite que en el test se puedan hacer aserciones matemáticas estrictas sobre la cantidad de productos reales.
 
-<h2 style="color: #FF69B4;">📸 Capturas de Tests Validados 📸</h2>
+### 🧪 Clases de Prueba (Tests)
 
-<p style="color: #4B0082;"><i>En este apartado se adjuntan las evidencias de la ejecución exitosa de las baterías de pruebas.</i></p>
+> Aquí es donde ocurre la magia. Estas clases envían instrucciones a las Pages y comprueban (assert) que el resultado sea el correcto. Todas las pruebas usan `Duration.ofSeconds(5)` como espera implícita para asegurar que la página cargue antes de interactuar.
+
+🌷 **`LoginTest.java`**
+Clase encargada de validar el flujo de seguridad y autenticación.
+*   **Gestión de Ciclo de Vida:** Utiliza fervientemente las anotaciones de JUnit 5: `@BeforeEach` para levantar un navegador de Chrome limpio antes de cada prueba y `@AfterEach` para invocar el método `.quit()`, evitando procesos zombis en el ordenador.
+*   **Tests:**
+    *   `loginCorrecto`: Confirma que, tras introducir credenciales válidas, el sistema redirige al usuario validando que `driver.getCurrentUrl()` contiene "inventory".
+    *   `loginIncorrecto`: Valida el manejo de errores capturando el texto de advertencia y usando un `assertTrue` para asegurar que las contraseñas no coinciden.
+
+🌷 **`InventoryTest.java`**
+Batería de pruebas enfocada en el *Customer Journey* (el viaje de compra del usuario).
+*   **Tests:**
+    *   `anadirUnProductoAlCarrito`: Agrega un ítem y exige con `assertEquals` que el contador valga exactamente `1`.
+    *   `anadirDosProductosAlCarrito`: Ejecuta flujos múltiples, añadiendo la mochila y la luz de bicicleta, para verificar que el contador asciende a `2`.
+    *   `botonCambiaTrasAnadirProducto`: Prueba esencial de experiencia de usuario (UX). Verifica que el botón de añadir se transforma en un botón rojo de borrar usando `isDisplayed()` y `assertTrue()`.
+    *   `pruebaAdicional_verificarProductoDentroDelCarrito`: Prueba de **ampliación (bonus)** que navega a través de las páginas. Tras añadir el producto, hace clic en el carrito, extrae el texto de la etiqueta del ítem añadido y valida mediante `assertEquals` que es literalmente "Sauce Labs Backpack".
+
+---
+
+## 📸 ✨ Capturas de Tests Validados
+
+*En este apartado se adjuntan las evidencias de la ejecución exitosa de las baterías de pruebas en el IDE.*
 
 <!-- Sustituye las siguientes rutas por las de tus capturas reales -->
 <p align="center">
   <img src="URL_DE_TU_CAPTURA_LOGIN_TEST" alt="Login Tests Pasados" width="600">
   <br>
-  <em style="color: #DB7093;">Figura 1: Ejecución exitosa de la batería de pruebas de <code>LoginTest</code>.</em>
+  <em>Figura 1: Ejecución exitosa y en verde de la batería de pruebas de <code>LoginTest</code>.</em>
 </p>
 
 <p align="center">
   <img src="URL_DE_TU_CAPTURA_INVENTORY_TEST" alt="Inventory Tests Pasados" width="600">
   <br>
-  <em style="color: #DB7093;">Figura 2: Ejecución exitosa de la batería de pruebas de <code>InventoryTest</code>.</em>
+  <em>Figura 2: Ejecución exitosa de <code>InventoryTest</code>, incluyendo la prueba adicional de ampliación.</em>
 </p>
 
-<hr style="border: 1px dashed #FFC0CB;">
+---
 
-<h2 style="color: #FF69B4;">💡 Apreciación y Reflexión Personal 💡</h2>
+## 💡 🧠 Apreciación y Reflexión Personal
 
-<div style="background-color: #FFFAFA; border-left: 5px solid #FFB6C1; padding: 15px;">
-<p style="color: #4B0082;">La realización de esta tarea me ha permitido comprender en la práctica la importancia y utilidad del patrón de diseño <strong>Page Object Model (POM)</strong>. La separación clara de responsabilidades entre las clases que modelan las páginas y las clases que contienen las pruebas hace que el código sea mucho más legible, mantenible y reutilizable. Entiendo que, ante un cambio en la interfaz de usuario, solo necesitaría actualizar el localizador en la clase Page correspondiente, sin tener que modificar ninguna lógica de prueba.</p>
-<p style="color: #4B0082;">El uso de <strong>Selenium WebDriver</strong> para la interacción con el navegador y <strong>JUnit 5</strong> para la estructuración y ejecución de las pruebas me ha proporcionado una base sólida en automatización. He aprendido a seleccionar estrategias de localización de elementos eficientes (priorizando `id` sobre otros selectores más frágiles) y a implementar flujos de usuario complejos de manera programática. Las anotaciones <code>@BeforeEach</code> y <code>@AfterEach</code> son fundamentales para garantizar que cada test se ejecute en un estado aislado y predecible, lo cual es una buena práctica esencial.</p>
-<p style="color: #4B0082;">Finalmente, la aplicación de aserciones como <code>assertTrue</code> y <code>assertEquals</code> me ha enseñado a no solo ejecutar acciones, sino a validar de forma explícita que el estado de la aplicación es el esperado. Ver las pruebas ejecutarse de forma autónoma y obtener un reporte afirmativo me da confianza en la calidad del código y en las habilidades que estoy desarrollando. Considero que esta tarea ha sido un ejercicio muy completo y representativo de los desafíos que se presentan en un entorno de testing profesional.</p>
-</div>
+> 🌸 **Reflexión como alumna:**
+>
+> La realización de esta tarea me ha permitido comprender en la práctica la enorme importancia y utilidad real del patrón de diseño **Page Object Model (POM)**. Cuando empecé a programar automatizaciones, tendía a mezclarlo todo en un solo archivo. Ahora veo la luz: separar claramente las responsabilidades entre las clases que mapean la interfaz web (`Pages`) y las clases que ejecutan las pruebas lógicas (`Tests`) hace que todo mi código sea inmensamente más profesional, limpio, legible y, sobre todo, fácil de mantener a largo plazo. Si mañana el equipo de desarrollo de SauceDemo decide cambiar la estructura de su web, entiendo perfectamente que solo tendría que actualizar el archivo Page correspondiente y todos mis Tests seguirían funcionando sin tener que reescribirlos.
+>
+> Trabajar codo a codo con **Selenium WebDriver** y **JUnit 5** me ha proporcionado una base espectacular. Al principio me parecía un desafío encontrar los selectores, pero he aprendido a utilizar y priorizar estrategias eficientes: buscar primero un identificador único con `By.id`, y, si no existe, apoyarme en `By.cssSelector` o `By.className` para asegurar la máxima estabilidad en la prueba. La implementación de las anotaciones `@BeforeEach` y `@AfterEach` ha sido un descubrimiento vital para mí; es una práctica excelente para evitar "ventanas fantasma" en Chrome y garantizar que cada prueba empiece con el entorno y la memoria completamente en limpio, asegurando así resultados veraces.
+>
+> Finalmente, aprender a aplicar correctamente las aserciones como `assertTrue` y `assertEquals` me ha enseñado que probar no es solo hacer que un robot haga clics, sino exigir explícitamente a la aplicación que demuestre que está en el estado correcto. Ver cómo mi código toma el control del navegador, navega a velocidad de la luz, rellena formularios, procesa datos numéricos extraídos del carrito de compras y, finalmente, me devuelve todo el árbol de JUnit en verde (`Passed`), es algo sumamente satisfactorio. Definitivamente, considero que esta tarea ha sido un ejercicio muy realista y que me deja mucho más preparada para afrontar los entornos de calidad (QA) y Testing en el sector laboral real. 💖🚀
 
-<hr style="border: 1px dashed #FFC0CB;">
+---
 
-<h2 style="color: #FF69B4;">⚙️ Tecnologías Utilizadas ⚙️</h2>
-<ul style="list-style-type: '💖 '; color: #4B0082;">
-    <li><strong>Java 25</strong> (Lenguaje de programación)</li>
-    <li><strong>Maven</strong> (Gestor de dependencias y construcción del proyecto)</li>
-    <li><strong>Selenium WebDriver (4.42.0)</strong></li>
-    <li><strong>WebDriverManager (6.1.0)</strong> (Gestión automática de los binarios del driver)</li>
-    <li><strong>JUnit 5 (5.10.1)</strong> (Framework para la ejecución de pruebas)</li>
-</ul>
+## 🎀 ⚙️ Tecnologías y Dependencias Utilizadas
 
-</div>
+*(Toda la configuración y dependencias están gestionadas en el archivo `pom.xml`)*
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Java-25-ff69b4?style=for-the-badge&logo=openjdk&logoColor=white" alt="Java 25">
+  <img src="https://img.shields.io/badge/Maven-ff69b4?style=for-the-badge&logo=apachemaven&logoColor=white" alt="Maven">
+  <img src="https://img.shields.io/badge/Selenium-4.42.0-ff69b4?style=for-the-badge&logo=selenium&logoColor=white" alt="Selenium">
+  <img src="https://img.shields.io/badge/JUnit5-5.10.1-ff69b4?style=for-the-badge&logo=junit5&logoColor=white" alt="JUnit 5">
+</p>
+
+*   💖 **Java 25**: Lenguaje de programación principal sobre el que se ha construido toda la lógica.
+*   💖 **Maven**: Sistema de construcción y gestor de las dependencias externas del proyecto.
+*   💖 **Selenium WebDriver (v. 4.42.0)**: Librería principal encargada de levantar y controlar de manera autónoma el navegador web.
+*   💖 **WebDriverManager (v. 6.1.0)**: Librería de Bonigarcia que facilita la inyección automática del binario correcto del navegador, sin tener que descargar *chromedriver.exe* manualmente.
+*   💖 **JUnit Jupiter (v. 5.10.1)**: Framework sobre el que orquestamos la ejecución ordenada de las pruebas y las validaciones/aserciones.
