@@ -60,13 +60,16 @@ Batería de pruebas enfocada en el *Customer Journey* (el viaje de compra del us
 
 <!-- Sustituye las siguientes rutas por las de tus capturas reales -->
 <p align="center">
-  <img src="URL_DE_TU_CAPTURA_LOGIN_TEST" alt="Login Tests Pasados" width="600">
+<img width="1412" height="1258" alt="image" src="https://github.com/user-attachments/assets/4de56153-7692-456b-8101-09c28b95b69e" />
+<img width="1428" height="1251" alt="image" src="https://github.com/user-attachments/assets/11cee9e0-1364-42be-924c-18d82bc65dd6" />
   <br>
-  <em>Figura 1: Ejecución exitosa y en verde de la batería de pruebas de <code>LoginTest</code>.</em>
+  <em>Ejecución exitosa y en verde de la batería de pruebas de <code>LoginTest</code>.</em>
 </p>
 
 <p align="center">
-  <img src="URL_DE_TU_CAPTURA_INVENTORY_TEST" alt="Inventory Tests Pasados" width="600">
+  <img width="1412" height="1290" alt="image" src="https://github.com/user-attachments/assets/ef4462c3-1b79-4a29-858f-3c322d6c152e" />
+  <img width="1572" height="1266" alt="image" src="https://github.com/user-attachments/assets/7f05da63-9b93-464b-8fe3-b57d263784d2" />
+  <img width="1569" height="1235" alt="image" src="https://github.com/user-attachments/assets/92e5aa8e-3a1b-44a6-870c-c184fb92bdda" />
   <br>
   <em>Figura 2: Ejecución exitosa de <code>InventoryTest</code>, incluyendo la prueba adicional de ampliación.</em>
 </p>
