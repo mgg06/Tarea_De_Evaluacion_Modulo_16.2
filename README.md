@@ -61,7 +61,7 @@ Batería de pruebas enfocada en el *Customer Journey* (el viaje de compra del us
 <!-- Sustituye las siguientes rutas por las de tus capturas reales -->
 <p align="center">
   <em>Ejecución exitosa y en verde de la batería de pruebas de <code>LoginTest</code>:</em><br>
-
+<br>
   <img width="400" src="https://github.com/user-attachments/assets/4de56153-7692-456b-8101-09c28b95b69e" style="display:block; margin:auto;" />
 
   <img width="400" src="https://github.com/user-attachments/assets/11cee9e0-1364-42be-924c-18d82bc65dd6" style="display:block; margin:auto;" />
@@ -69,7 +69,7 @@ Batería de pruebas enfocada en el *Customer Journey* (el viaje de compra del us
 
 <p align="center">
   <em>Ejecución exitosa de <code>InventoryTest</code>, incluyendo la prueba adicional de ampliación:</em><br>
-
+<br>
   <img width="400" src="https://github.com/user-attachments/assets/ef4462c3-1b79-4a29-858f-3c322d6c152e" style="display:block; margin:auto;" />
 
   <img width="400" src="https://github.com/user-attachments/assets/7f05da63-9b93-464b-8fe3-b57d263784d2" style="display:block; margin:auto;" />
