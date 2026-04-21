@@ -1,32 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Etiqueta principal que guarda todo el projecto -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Version del sistema de Maven -->
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- Identificador personal (como nombre de una empresa) -->
     <groupId>org.marta</groupId>
+    <!-- Nombre del proyecto -->
     <artifactId>Tarea_De_Evaluacion_Modulo_16.2</artifactId>
+    <!-- Versión del código, SNAPSHOT significa que está en desarrollo -->
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>25</maven.compiler.source>
-        <maven.compiler.target>25</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Sección de ajustes generales -->
+        <maven.compiler.source>25</maven.compiler.source> <!-- Se usa la versión 25 de Java -->
+        <maven.compiler.target>25</maven.compiler.target> <!-- Se compila para Java 25 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> <!-- Textos en formato UFT-8 -->
     </properties>
 
     <dependencies>
+        <!-- Herramientas extenas que se necesitan -->
+
+        <!-- Dependencias para Selenium -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.42.0</version>
         </dependency>
 
+        <!-- Dependencias para Web Driver Manager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>6.1.0</version>
         </dependency>
 
+        <!-- Dependencias para JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
