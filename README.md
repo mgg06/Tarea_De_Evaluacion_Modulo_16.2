@@ -61,16 +61,16 @@ Batería de pruebas enfocada en el *Customer Journey* (el viaje de compra del us
 <!-- Sustituye las siguientes rutas por las de tus capturas reales -->
 <p align="center">
   <em>Ejecución exitosa y en verde de la batería de pruebas de <code>LoginTest</code>:</em>
-<img width="412" height="258" alt="image" src="https://github.com/user-attachments/assets/4de56153-7692-456b-8101-09c28b95b69e" />
-<img width="428" height="251" alt="image" src="https://github.com/user-attachments/assets/11cee9e0-1364-42be-924c-18d82bc65dd6" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/4de56153-7692-456b-8101-09c28b95b69e" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/11cee9e0-1364-42be-924c-18d82bc65dd6" />
   <br>
 </p>
 
 <p align="center">
   <em>Ejecución exitosa de <code>InventoryTest</code>, incluyendo la prueba adicional de ampliación:</em>
-  <img width="412" height="290" alt="image" src="https://github.com/user-attachments/assets/ef4462c3-1b79-4a29-858f-3c322d6c152e" />
-  <img width="572" height="266" alt="image" src="https://github.com/user-attachments/assets/7f05da63-9b93-464b-8fe3-b57d263784d2" />
-  <img width="569" height="235" alt="image" src="https://github.com/user-attachments/assets/92e5aa8e-3a1b-44a6-870c-c184fb92bdda" />
+ <img width="400" alt="image" src="https://github.com/user-attachments/assets/ef4462c3-1b79-4a29-858f-3c322d6c152e" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/7f05da63-9b93-464b-8fe3-b57d263784d2" />
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/92e5aa8e-3a1b-44a6-870c-c184fb92bdda" />
   <br>
 </p>
 
