@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 // Esta clase representa la pantalla que aparece después de hacer login (el escaparate de
-// productos) Aquí guardaremos cómo encontrar los botones "Add to cart" y el icono del carrito
+// productos) Aquí guardaremos cómo encontrar los botones "add to cart" y el icono del carrito
 
 public class InventoryPage {
 
