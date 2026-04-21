@@ -79,7 +79,7 @@ Batería de pruebas enfocada en el *Customer Journey* (el viaje de compra del us
 
 ---
 
-## 💡 🧠 Apreciación y Reflexión Personal
+## 💡 🧠 Reflexión Personal
 
 > 🌸 **REFLEXIÓN:**
 >
